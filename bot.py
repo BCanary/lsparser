@@ -3,7 +3,8 @@ import sqlite3
 import random
 import time
 
-bot = telebot.TeleBot('1024746329:AAEX6BPpCpJFwdsNqNPKPzK2HS3MHhE8skU');
+TOKEN = ""
+bot = telebot.TeleBot(TOKEN);
 
 keyboard1 = telebot.types.ReplyKeyboardMarkup()
 keyboard1.row('скриншот')
@@ -109,7 +110,7 @@ def start_message(message):
 	if user == "None":
 		user = User(message.chat.id)
 		users.append(user)
-		
+
 	bot.send_message(message.chat.id, 'Добро пожаловать в парсер скринов!\nнаписав скриншот вы получите следующий скриншот,\nнаписав /url abc123 вы перейдете на этот url.', reply_markup=keyboard1)
 
 
